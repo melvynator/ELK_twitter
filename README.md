@@ -45,6 +45,40 @@ Now go into `twitter-pipeline`:
 
 `cd ELK_twitter/twitter-pipeline`
 
-Make sure that elasticsearch is started then you can launch the tweet collection with the following:
+Make sure that elasticsearch is started and run on the port 9600.
+
+You can run the pipeline using:
+
+`sudo /usr/share/logstash/bin/logstash -f config/twitter-pipeline.conf`
+
+Or define logstash in your `SYSTEM_PATH` and run the following:
 
 `logstash -f config/twitter-pipeline.conf`
+
+You should see some logs that end up with:
+
+`Successfully started Logstash API endpoint {:port=>9600}`
+
+Now go to kibana: http://localhost:5601/
+
+Management => Index Patterns => Create Index Pattern
+
+Into the text box `Index name or pattern` type:
+
+`twitter`
+
+Into the drop down box `Time Filter field name` choose:
+
+`inserted_in_es_at`
+
+Click on create.
+
+Now go into
+
+Management => Saved Objects => import
+
+And select the file in: 
+
+`ELK_twitter/twitter-pipeline/kibana-visualization/kibana_charts.json`
+
+You can now go into the "Dashboard" and you should see charts.
