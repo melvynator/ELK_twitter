@@ -25,10 +25,10 @@ Once you have downloaded the repository open the file:
 Replace the `<YOUR-KEY>` by your corresponding twitter key:
 
 
-`consumer_key => "<YOUR-KEY>"
-consumer_secret => "<YOUR-KEY>"
-oauth_token => "<YOUR-KEY>"
-oauth_token_secret => "<YOUR-KEY>"`
+      consumer_key => "<YOUR-KEY>"
+      consumer_secret => "<YOUR-KEY>"
+      oauth_token => "<YOUR-KEY>"
+      oauth_token_secret => "<YOUR-KEY>"
 
 
 Now go into `twitter-ELK`:
