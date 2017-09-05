@@ -30,7 +30,7 @@ Clone the repository:
 
 Once you have downloaded the repository open the file:
 
-`ELK_twitter/twitter-ELK/config/twitter-pipeline.conf`
+`ELK_twitter/twitter-pipeline/config/twitter-pipeline.conf`
 
 Replace the `<YOUR-KEY>` by your corresponding twitter key:
 
@@ -41,9 +41,9 @@ Replace the `<YOUR-KEY>` by your corresponding twitter key:
       oauth_token_secret => "<YOUR-KEY>"
 
 
-Now go into `twitter-ELK`:
+Now go into `twitter-pipeline`:
 
-`cd ELK_twitter/twitter-ELK`
+`cd ELK_twitter/twitter-pipeline`
 
 Make sure that elasticsearch is started then you can launch the tweet collection with the following:
 
