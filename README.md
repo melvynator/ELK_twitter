@@ -8,7 +8,17 @@ The presentation-example folder contains a fully working example that I use in t
 
 ## Requirements
 
-You need to have installed ELasticsearch, Logstash and Kibana to use this pipeline.
+You need to have installed [Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/current/setup.html), [Logstash](https://www.elastic.co/guide/en/logstash/current/installing-logstash.html) and [Kibana](https://www.elastic.co/guide/en/kibana/current/install.html) to use this pipeline. 
+
+Configuring Elasticsearch to start automatically when the system boots up.
+
+      sudo /bin/systemctl daemon-reload
+      sudo /bin/systemctl enable elasticsearch.service
+
+Elasticsearch can be started and stopped as follows:
+
+      sudo systemctl start elasticsearch.service
+      sudo systemctl stop elasticsearch.service
 
 You also need a twitter developer account => https://dev.twitter.com/resources/signup
 
