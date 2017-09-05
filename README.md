@@ -1,24 +1,28 @@
 # ELK for Twitter
 
+## Introduction
 
-This repo aim to provide a fully working out of the box data pipeline for Twitter using the ELK stack.
+This repository aim to provide a fully working out of the box data pipeline for Twitter using the ELK stack.
 
 The presentation-example folder contains a fully working example that I use in the presentation of this pipeline: <insert link here later>, you can use it to play around and familiarize yourself with ELK.
 
-You need to have installed ELasticsearch, Logstash and Kibana to use it.
+## Requirements
+
+You need to have installed ELasticsearch, Logstash and Kibana to use this pipeline.
+
 You also need a twitter developer account.
+
+## Getting started
 
 Clone the repository:
 
 `git clone https://github.com/melvynator/ELK_twitter.git`
 
-Once you have downloaded the repository:
-
-Open the file located:
+Once you have downloaded the repository open the file:
 
 `ELK_twitter/twitter-ELK/config/twitter-pipeline.conf`
 
-And replace the "<YOUR-KEY>" by your corresponding keys.
+And replace the "<YOUR-KEY>" by your corresponding twitter key.
 
 `
 consumer_key => "<YOUR-KEY>"
@@ -31,8 +35,6 @@ Now go into `twitter-ELK`:
 
 `cd ELK_twitter/twitter-ELK`
 
-
-Make sure that elasticsearch is started then you can launch the pipeline with the following:
+Make sure that elasticsearch is started then you can launch the tweet collection with the following:
 
 `logstash -f config/twitter-pipeline.conf`
-
