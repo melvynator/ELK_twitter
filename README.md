@@ -2,9 +2,11 @@
 
 ## Introduction
 
-This repository aim to provide a fully working out of the box data pipeline for Twitter using the ELK stack.
+This repository aim to provide a fully working "out-of-the-box" data pipeline for Twitter using the ELK stack.
 
-The presentation-example folder contains a fully working example that I use in the presentation of this pipeline: <insert link here later>, you can use it to play around and familiarize yourself with ELK.
+* A tokenizer that keep emoticons and punctuation for sentimental and emotion analysis is present. *
+
+The presentation-example folder contains a fully working example that I use in the presentation of this pipeline: ~insert_link here later~, you can use it to play around and familiarize yourself with ELK.
 
 ## Requirements
 
@@ -29,6 +31,10 @@ You also need a twitter developer account => https://dev.twitter.com/resources/s
 Clone the repository:
 
 `git clone https://github.com/melvynator/ELK_twitter.git`
+
+### Setting up Elasticsearch
+
+Make sure that you don't have an index `twitter` already present.
 
 ### Setting up Logstash
 
@@ -101,7 +107,7 @@ You can now go to *Dashboard*
 
 ![alt text](https://github.com/melvynator/ELK_twitter/blob/master/img/dashboard.png "Dashboard")
 
-Now you should see charts like:
+Now you should be able to see charts like:
 
 ![alt text](https://github.com/melvynator/ELK_twitter/blob/master/img/dashboard_visualization.gif "Dashboard")
 
