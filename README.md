@@ -20,6 +20,8 @@ Elasticsearch can be started and stopped as follows:
       sudo systemctl start elasticsearch.service
       sudo systemctl stop elasticsearch.service
 
+(Note that the same steps can be used for Kibana and Logstash)
+
 You also need a twitter developer account => https://dev.twitter.com/resources/signup
 
 ## Getting started
