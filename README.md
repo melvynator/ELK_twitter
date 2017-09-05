@@ -4,7 +4,7 @@
 
 This repository aim to provide a fully working "out-of-the-box" data pipeline for Twitter using the ELK stack.
 
-* A tokenizer that keep emoticons and punctuation for sentimental and emotion analysis is present. *
+*A tokenizer that keep emoticons and punctuation for sentimental and emotion analysis is present.*
 
 The presentation-example folder contains a fully working example that I use in the presentation of this pipeline: ~insert_link here later~, you can use it to play around and familiarize yourself with ELK.
 
