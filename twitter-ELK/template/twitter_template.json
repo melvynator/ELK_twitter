@@ -1,0 +1,245 @@
+{
+	"template": "twitter",
+  "settings": {
+    "index": {
+      "number_of_shards": 1,
+      "number_of_replicas": 0,
+      "mapper.dynamic": false
+    },
+    "analysis": {
+      "analyzer": {
+        "nlp_analyzer": {
+          "type": "custom",
+          "tokenizer": "tweeter_tokenizer",
+          "filter": ["lowercase"]
+        }
+      },
+      "tokenizer": {
+        "tweeter_tokenizer": {
+          "type": "pattern",
+          "pattern": "(\\w+)|(\\s*[\\s+])"
+        }
+      }
+    }
+
+  },
+  "mappings": {
+    "author": {
+      "_all": {
+        "enabled": false
+      },
+      "dynamic": "false",
+      "properties": {
+        "author_description": {
+          "type": "text",
+          "fields": {
+            "english": {
+              "type": "text",
+              "analyzer": "english",
+              "term_vector": "yes"
+            },
+            "nlp": {
+              "type": "text",
+              "analyzer": "nlp_analyzer",
+              "term_vector": "yes"
+            },
+            "standard": {
+              "type": "text",
+              "analyzer": "standard",
+              "term_vector": "yes"
+            },
+            "english_token_number": {
+              "type": "token_count",
+              "analyzer": "english"
+            },
+            "nlp_token_number": {
+              "type": "token_count",
+              "analyzer": "nlp_analyzer"
+            },
+            "standard_token_number": {
+              "type": "token_count",
+              "analyzer": "standard"
+            }
+          }
+        },
+        "is_author_protected": {
+          "type": "boolean"
+        },
+        "author_location": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword"
+            },
+            "english": {
+              "type": "text",
+              "analyzer": "english",
+              "term_vector": "yes"
+            },
+            "nlp": {
+              "type": "text",
+              "analyzer": "nlp_analyzer",
+              "term_vector": "yes"
+            },
+            "standard": {
+              "type": "text",
+              "analyzer": "standard",
+              "term_vector": "yes"
+            },
+            "english_token_number": {
+              "type": "token_count",
+              "analyzer": "english"
+            },
+            "nlp_token_number": {
+              "type": "token_count",
+              "analyzer": "nlp_analyzer"
+            },
+            "standard_token_number": {
+              "type": "token_count",
+              "analyzer": "standard"
+            }
+          }
+        },
+        "author_lang": {
+          "type": "keyword"
+        },
+        "author_account_creation": {
+          "type": "date"
+        },
+        "is_author_verified": {
+          "type": "boolean"
+        },
+        "author_id": {
+          "type": "keyword"
+        },
+        "author_name": {
+          "type": "keyword"
+        },
+        "author_pseudo": {
+          "type": "keyword"
+        },
+        "author_friends_count": {
+          "type": "integer"
+        },
+        "author_followers_count": {
+          "type": "integer"
+        },
+        "inserted_in_es_at": {
+          "type": "date"
+        }
+      }
+    },
+    "tweet": {
+      "dynamic": "false",
+      "_all": {
+        "enabled": false
+      },
+      "properties": {
+        "tweet_coordinates": {
+          "type": "geo_point"
+        },
+        "tweet_id": {
+          "type": "keyword"
+        },
+        "retweet_count": {
+          "type": "integer"
+        },
+        "original_favorite_count": {
+          "type": "integer"
+        },
+        "tweet_created_at": {
+          "type": "date"
+        },
+        "is_a_retweet": {
+          "type": "boolean"
+        },
+        "original_tweet_id": {
+          "type": "keyword"
+        },
+        "favorite_count": {
+          "type": "integer"
+        },
+        "tweet_content": {
+          "type": "text",
+          "fields": {
+            "english": {
+              "type": "text",
+              "analyzer": "english",
+              "term_vector": "yes"
+            },
+            "nlp": {
+              "type": "text",
+              "analyzer": "nlp_analyzer",
+              "term_vector": "yes"
+            },
+            "standard": {
+              "type": "text",
+              "analyzer": "standard",
+              "term_vector": "yes"
+            },
+            "english_token_number": {
+              "type": "token_count",
+              "analyzer": "english"
+            },
+            "nlp_token_number": {
+              "type": "token_count",
+              "analyzer": "nlp_analyzer"
+            },
+            "standard_token_number": {
+              "type": "token_count",
+              "analyzer": "standard"
+            }
+          }
+        },
+        "original_tweet_created_at": {
+          "type": "date"
+        },
+        "tweet_lang": {
+          "type": "keyword"
+        },
+        "hashtags": {
+          "type": "keyword"
+        },
+        "original_reply_to_pseudo": {
+          "type": "keyword"
+        },
+        "original_reply_to_tweet": {
+          "type": "keyword"
+        },
+        "original_reply_to_user_id": {
+          "type": "keyword"
+        },
+        "reply_to_pseudo": {
+          "type": "keyword"
+        },
+        "reply_to_tweet": {
+          "type": "keyword"
+        },
+        "reply_to_user_id": {
+          "type": "keyword"
+        },
+        "urls": {
+          "type": "keyword"
+        },
+        "user_mentions_id": {
+          "type": "keyword"
+        },
+        "user_mentions_pseudo": {
+          "type": "keyword"
+        },
+        "inserted_in_es_at": {
+          "type": "date"
+        },
+        "original_author_id": {
+          "type": "keyword"
+        },
+        "author_id": {
+          "type": "keyword"
+        },
+        "original_retweet_count": {
+          "type": "integer"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,3 @@
+{"last_name":"Peignon", "first_name":"Melvyn", "age": 25, "school": "NTHU", "degree":"Master", "comment": "A fun guy from France"}
+{"last_name":"Huang", "first_name":"Eric", "age": 24, "school": "NTHU", "degree":"PhD", "comment": "A smart guy from Taiwan"}
+{"last_name":"Lee", "first_name":"Yi Fen", "age": 26, "school": "NCHU", "degree":"Bachelor", "comment": "A nice girl from Taiwan"}
