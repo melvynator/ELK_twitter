@@ -14,26 +14,25 @@ Clone the repository:
 
 Once you have downloaded the repository:
 
-You have to write down your API keys in the file:
+Open the file located:
 
 `ELK_twitter/twitter-ELK/config/twitter-pipeline.conf`
 
-      consumer_key => "<YOUR-KEY>"
-      consumer_secret => "<YOUR-KEY>"
-      oauth_token => "<YOUR-KEY>"
-      oauth_token_secret => "<YOUR-KEY>"
+And replace the "<YOUR-KEY>" by your corresponding keys.
 
+`
+consumer_key => "<YOUR-KEY>"
+consumer_secret => "<YOUR-KEY>"
+oauth_token => "<YOUR-KEY>"
+oauth_token_secret => "<YOUR-KEY>"
+`
+
+Now go into `twitter-ELK`:
 
 `cd ELK_twitter/twitter-ELK`
 
 
-You have to change the 
-
-First make sure that elasticsearch is started.
-
-
-
-Then you can launch the pipeline with the following:
+Make sure that elasticsearch is started then you can launch the pipeline with the following:
 
 `logstash -f config/twitter-pipeline.conf`
 
