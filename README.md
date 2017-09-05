@@ -103,6 +103,7 @@ You can now go to *Dashboard*
 
 Now you should see charts like:
 
+![alt text](https://github.com/melvynator/ELK_twitter/blob/master/img/dashboard_visualization.gif "Dashboard")
 
 
 
