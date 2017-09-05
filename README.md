@@ -10,7 +10,7 @@ The presentation-example folder contains a fully working example that I use in t
 
 You need to have installed ELasticsearch, Logstash and Kibana to use this pipeline.
 
-You also need a twitter developer account.
+You also need a twitter developer account => https://dev.twitter.com/resources/signup
 
 ## Getting started
 
