@@ -22,7 +22,7 @@ Once you have downloaded the repository open the file:
 
 `ELK_twitter/twitter-ELK/config/twitter-pipeline.conf`
 
-And replace the "<YOUR-KEY>" by your corresponding twitter key.
+Replace the <YOUR-KEY> by your corresponding twitter key.
 
 `
 consumer_key => "<YOUR-KEY>"
