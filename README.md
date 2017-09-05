@@ -28,6 +28,8 @@ Clone the repository:
 
 `git clone https://github.com/melvynator/ELK_twitter.git`
 
+### Setting up Logstash
+
 Once you have downloaded the repository open the file:
 
 `ELK_twitter/twitter-pipeline/config/twitter-pipeline.conf`
@@ -59,26 +61,22 @@ You should see some logs that end up with:
 
 `Successfully started Logstash API endpoint {:port=>9600}`
 
+### Setting up Kibana
+
 Now go to kibana: http://localhost:5601/
 
-Management => Index Patterns => Create Index Pattern
+*Management => Index Patterns => Create Index Pattern*
 
-Into the text box `Index name or pattern` type:
+Into the text box `Index name or pattern` type: `twitter`
 
-`twitter`
+Into the drop down box `Time Filter field name` choose: `inserted_in_es_at`
 
-Into the drop down box `Time Filter field name` choose:
+Click on create, now go to:
 
-`inserted_in_es_at`
-
-Click on create.
-
-Now go into
-
-Management => Saved Objects => import
+*Management => Saved Objects => import*
 
 And select the file in: 
 
 `ELK_twitter/twitter-pipeline/kibana-visualization/kibana_charts.json`
 
-You can now go into the "Dashboard" and you should see charts.
+You can now go to *Dashboard* and you should see charts.
