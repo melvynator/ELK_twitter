@@ -69,16 +69,43 @@ Now go to kibana: http://localhost:5601/
 
 *Management => Index Patterns => Create Index Pattern*
 
+![alt text](https://github.com/melvynator/ELK_twitter/blob/master/img/management.png "Management")
+
+![alt text](https://github.com/melvynator/ELK_twitter/blob/master/img/index_patterns.png "Index Patterns")
+
+![alt text](https://github.com/melvynator/ELK_twitter/blob/master/img/conf_index_pattern.png "Config index")
+
 Into the text box `Index name or pattern` type: `twitter`
 
 Into the drop down box `Time Filter field name` choose: `inserted_in_es_at`
 
-Click on create, now go to:
+Click on create
+
+![alt text](https://github.com/melvynator/ELK_twitter/blob/master/img/filled_index_pattern.png "Fill out")
+
+Now go to:
 
 *Management => Saved Objects => import*
+
+![alt text](https://github.com/melvynator/ELK_twitter/blob/master/img/management.png "Management")
+
+![alt text](https://github.com/melvynator/ELK_twitter/blob/master/img/saved_objects.png "Saved objects")
+
+![alt text](https://github.com/melvynator/ELK_twitter/blob/master/img/import.png "Import")
 
 And select the file in: 
 
 `ELK_twitter/twitter-pipeline/kibana-visualization/kibana_charts.json`
 
-You can now go to *Dashboard* and you should see charts.
+You can now go to *Dashboard*
+
+![alt text](https://github.com/melvynator/ELK_twitter/blob/master/img/dashboard.png "Dashboard")
+
+Now you should see charts like:
+
+
+
+
+
+
+
