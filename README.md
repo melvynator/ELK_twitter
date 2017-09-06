@@ -4,7 +4,48 @@
 
 This repository aims to provide a fully working "out-of-the-box" data pipeline for Twitter using the ELK (Elasticsearch, Logstash, and Kibana) stack.
 
-*A tokenizer that keeps emoticons and punctuations, which is useful for sentimental and emotion analysis, is present.*
+The offered pipeline is the following:
+
+![alt text](https://github.com/melvynator/ELK_twitter/blob/master/img/pipeline.png "Pipeline")
+
+
+### Concerning the Logstash part
+
+#### Input
+
+The input used is Twitter, you can use it to track user or keyword.
+
+#### Filter
+
+A lot of filters are applied and mainly do the following tasks:
+
+* Remove depreciated field
+* Divide the tweet in two or three events (users and tweet)
+* Flaten the Json
+* Remove the fields not used
+
+#### Output
+
+Two output are defined:
+
+* Elasticsearch: To allow a better search of your data
+* MongoDB: To store your data
+
+### Concerning the Elasticsearch part
+
+#### Mapping
+
+A mapping is provided and offers the following:
+
+* On text fields (Twee content, User description, User location):
+  * 3 Analyzers
+  * Storing of the term vectors (For the 3 analyzers)
+  * Storing of the token numbers (For the 3 analyzers)
+
+The 3 analyzers are:
+1. Standard
+1. English
+1. A custom analyzer that keeps emoticons and punctuations, which is useful for sentimental and emotion analysis
 
 The `presentation-example` folder contains a fully working example that I use in the presentation of this pipeline: ~insert_link here later~, you can use it to play around and familiarize yourself with the ELK stack.
 
