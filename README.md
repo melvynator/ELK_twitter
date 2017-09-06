@@ -57,6 +57,15 @@ The 3 analyzers are:
 1. English
 1. A custom analyzer that keeps emoticons and punctuations, which is useful for sentimental and emotion analysis
 
+The mapping is not dynamic twitter having a lot of fields that are not (or poorly) documented, it avoid data polution and keep only the data wanted.
+
+### Concerning the Kibana part
+
+On Kibana side the repository offer:
+
+* A dashboards
+* Different kind of visualizations
+
 ## Requirements
 
 This guide assumes that you have already installed [Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/current/setup.html), [Logstash](https://www.elastic.co/guide/en/logstash/current/installing-logstash.html) and [Kibana](https://www.elastic.co/guide/en/kibana/current/install.html). All three need to be installed properly in order to use this pipeline.
