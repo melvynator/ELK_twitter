@@ -131,6 +131,9 @@
       }
     },
     "tweet": {
+      "_parent": {
+        "type": "author"
+      },
       "dynamic": "false",
       "_all": {
         "enabled": false
