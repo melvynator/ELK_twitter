@@ -168,7 +168,7 @@ You can now go to *Dashboard*
 
 ![alt text](https://github.com/melvynator/ELK_twitter/blob/master/img/dashboard.png "Dashboard")
 
-Ressources:
+# Ressources
 
 Thanks to stackoverflow community and Elastic community for the answer provided.
 
