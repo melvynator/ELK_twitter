@@ -31,7 +31,7 @@ A lot of filters are applied and mainly do the following tasks:
 
 * Remove depreciated field
 * Divide the tweet in two or three events (users and tweet)
-* Flaten the Json
+* Flatten the JSON
 * Remove the fields not used
 
 #### Output
@@ -71,6 +71,10 @@ On Kibana side the repository offer:
 
 ## Requirements
 
+For the pipeline to work, you need a Twitter developer account, which you can obtain here: https://dev.twitter.com/resources/signup
+
+### Linux users
+
 This guide assumes that you have already installed [Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/current/setup.html), [Logstash](https://www.elastic.co/guide/en/logstash/current/installing-logstash.html) and [Kibana](https://www.elastic.co/guide/en/kibana/current/install.html). All three need to be installed properly in order to use this pipeline.
 
 Once having installed ELK, here are some instructions to configure Elasticsearch to start automatically when the system boots up.
@@ -85,7 +89,13 @@ Elasticsearch can be started and stopped as follows:
 
 (Note that the same steps can be used for Kibana and Logstash)
 
-For the pipeline to work, you also need a Twitter developer account, which you can obtain here: https://dev.twitter.com/resources/signup
+### Mac users
+
+```
+brew install elasticsearch
+brew install logstash
+brew install kibana
+```
 
 ## Getting started
 
