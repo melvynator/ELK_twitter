@@ -2,17 +2,17 @@
 
 ## Introduction
 
-This repository aim to provide a fully working "out-of-the-box" data pipeline for Twitter using the ELK stack.
+This repository aims to provide a fully working "out-of-the-box" data pipeline for Twitter using the ELK (Elasticsearch, Logstash, and Kibana) stack.
 
-*A tokenizer that keep emoticons and punctuation for sentimental and emotion analysis is present.*
+*A tokenizer that keeps emoticons and punctuations, which is useful for sentimental and emotion analysis, is present.*
 
-The presentation-example folder contains a fully working example that I use in the presentation of this pipeline: ~insert_link here later~, you can use it to play around and familiarize yourself with ELK.
+The `presentation-example` folder contains a fully working example that I use in the presentation of this pipeline: ~insert_link here later~, you can use it to play around and familiarize yourself with the ELK stack.
 
 ## Requirements
 
-You need to have installed [Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/current/setup.html), [Logstash](https://www.elastic.co/guide/en/logstash/current/installing-logstash.html) and [Kibana](https://www.elastic.co/guide/en/kibana/current/install.html) to use this pipeline. 
+This guide assumes that you have already installed [Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/current/setup.html), [Logstash](https://www.elastic.co/guide/en/logstash/current/installing-logstash.html) and [Kibana](https://www.elastic.co/guide/en/kibana/current/install.html). All three need to be installed properly in order to use this pipeline.
 
-Configuring Elasticsearch to start automatically when the system boots up.
+Once having installed ELK, here are some instructions to configure Elasticsearch to start automatically when the system boots up.
 
       sudo /bin/systemctl daemon-reload
       sudo /bin/systemctl enable elasticsearch.service
@@ -24,7 +24,7 @@ Elasticsearch can be started and stopped as follows:
 
 (Note that the same steps can be used for Kibana and Logstash)
 
-You also need a twitter developer account => https://dev.twitter.com/resources/signup
+For the pipeline to work, you also need a Twitter developer account, which you can obtain here: https://dev.twitter.com/resources/signup
 
 ## Getting started
 
@@ -38,7 +38,7 @@ Make sure that you don't have an index `twitter` already present.
 
 ### Setting up Logstash
 
-Once you have downloaded the repository open the file:
+Once you have downloaded the repository, open the file:
 
 `ELK_twitter/twitter-pipeline/config/twitter-pipeline.conf`
 
@@ -55,7 +55,7 @@ Now go into `twitter-pipeline`:
 
 `cd ELK_twitter/twitter-pipeline`
 
-Make sure that elasticsearch is started and run on the port 9600.
+Make sure that elasticsearch is started and run on the port `9600`.
 
 You can run the pipeline using:
 
@@ -71,7 +71,7 @@ You should see some logs that end up with:
 
 ### Setting up Kibana
 
-Now go to kibana: http://localhost:5601/
+Now go to Kibana: http://localhost:5601/
 
 *Management => Index Patterns => Create Index Pattern*
 
@@ -99,7 +99,7 @@ Now go to:
 
 ![alt text](https://github.com/melvynator/ELK_twitter/blob/master/img/import.png "Import")
 
-And select the file in: 
+And select the file in:
 
 `ELK_twitter/twitter-pipeline/kibana-visualization/kibana_charts.json`
 
@@ -110,9 +110,3 @@ You can now go to *Dashboard*
 Now you should be able to see charts like:
 
 ![alt text](https://github.com/melvynator/ELK_twitter/blob/master/img/dashboard_visualization.gif "Dashboard")
-
-
-
-
-
-
