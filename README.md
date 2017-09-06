@@ -17,8 +17,6 @@ The offered pipeline can be modelized by the following flow chart:
 
 ![alt text](https://github.com/melvynator/ELK_twitter/blob/master/img/pipeline.png "Pipeline")
 
-In this repository there is as well
-
 Let's have a look to the different part that are covered by this pipeline:
 
 ### Concerning the Logstash part
