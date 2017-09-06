@@ -1,5 +1,5 @@
 {
-	"template": "twitter",
+  "template": "twitter",
   "settings": {
     "index": {
       "number_of_shards": 1,
@@ -18,7 +18,7 @@
         "tweeter_tokenizer": {
           "type": "pattern",
           "pattern": "(\\w+|\\S*[\\S*])",
-					"group": 1
+          "group": 1
         }
       }
     }
