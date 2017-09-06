@@ -2,12 +2,24 @@
 
 ## Introduction
 
-This repository aims to provide a fully working "out-of-the-box" data pipeline for Twitter using the ELK (Elasticsearch, Logstash, and Kibana) stack.
+This repository aims to provide a fully working "out-of-the-box" data pipeline for Twitter using the ELK (Elasticsearch, Logstash, and Kibana) stack. 
 
-The offered pipeline is the following:
+The `presentation-example` folder contains a fully working example that I use in the presentation of this pipeline: ~insert_link here later~, you can use it to play around and familiarize yourself with the ELK stack.
+
+
+After having installed ELK you should be able in 5 minnutes to visualize dashboard like the following:
+
+<p align="center">
+   <img src ="https://github.com/melvynator/ELK_twitter/blob/master/img/dashboard_visualization.gif" />
+</p>
+
+The offered pipeline can be modelized by the following flow chart:
 
 ![alt text](https://github.com/melvynator/ELK_twitter/blob/master/img/pipeline.png "Pipeline")
 
+In this repository there is as well
+
+Let's have a look to the different part that are covered by this pipeline:
 
 ### Concerning the Logstash part
 
@@ -46,8 +58,6 @@ The 3 analyzers are:
 1. Standard
 1. English
 1. A custom analyzer that keeps emoticons and punctuations, which is useful for sentimental and emotion analysis
-
-The `presentation-example` folder contains a fully working example that I use in the presentation of this pipeline: ~insert_link here later~, you can use it to play around and familiarize yourself with the ELK stack.
 
 ## Requirements
 
@@ -148,6 +158,3 @@ You can now go to *Dashboard*
 
 ![alt text](https://github.com/melvynator/ELK_twitter/blob/master/img/dashboard.png "Dashboard")
 
-Now you should be able to see charts like:
-
-![alt text](https://github.com/melvynator/ELK_twitter/blob/master/img/dashboard_visualization.gif "Dashboard")
