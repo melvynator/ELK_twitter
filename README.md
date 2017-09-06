@@ -7,7 +7,7 @@ This repository aims to provide a fully working "out-of-the-box" data pipeline f
 The `presentation-example` folder contains a fully working example that I use in the presentation of this pipeline: ~insert_link here later~, you can use it to play around and familiarize yourself with the ELK stack.
 
 
-After having installed ELK you should be able in 5 minnutes to visualize dashboard like the following:
+After having installed ELK you should be able in 5 minutes to visualize dashboard like the following:
 
 <p align="center">
    <img src ="https://github.com/melvynator/ELK_twitter/blob/master/img/dashboard_visualization.gif" />
@@ -23,7 +23,7 @@ Let's have a look to the different part that are covered by this pipeline:
 
 #### Input
 
-The input used is Twitter, you can use it to track user or keyword.
+The input used is Twitter, you can use it to track user or keyword or tweet in a specific location.
 
 #### Filter
 
@@ -47,23 +47,26 @@ Two output are defined:
 
 A mapping is provided and offers the following:
 
-* On text fields (Twee content, User description, User location):
+* A parent/child relationship between the tweet author and their tweets
+* On text fields (Tweet content, User description, User location):
   * 3 Analyzers
   * Storing of the term vectors (For the 3 analyzers)
   * Storing of the token numbers (For the 3 analyzers)
+* One geofield to locate the provenance of the tweet (if available)
+* Many "keyword", "integer" field to all allow data filtering
 
 The 3 analyzers are:
 1. Standard
 1. English
 1. A custom analyzer that keeps emoticons and punctuations, which is useful for sentimental and emotion analysis
 
-The mapping is not dynamic twitter having a lot of fields that are not (or poorly) documented, it avoid data polution and keep only the data wanted.
+The mapping is not dynamic, Twitter having a lot of fields that are not (or poorly) documented, it avoid data polution and keep only the wanted data.
 
 ### Concerning the Kibana part
 
 On Kibana side the repository offer:
 
-* A dashboards
+* A dashboard
 * Different kind of visualizations
 
 ## Requirements
