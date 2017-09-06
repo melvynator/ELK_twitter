@@ -168,3 +168,10 @@ You can now go to *Dashboard*
 
 ![alt text](https://github.com/melvynator/ELK_twitter/blob/master/img/dashboard.png "Dashboard")
 
+Ressources:
+
+Thanks to stackoverflow community and Elastic community for the answer provided.
+
+https://www.elastic.co/guide/en/logstash/current/introduction.html
+https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html
+
