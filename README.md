@@ -1,4 +1,4 @@
-# ELK for Twitter
+# ELK for Twitter sentiment analysis
 
 ## Introduction
 
