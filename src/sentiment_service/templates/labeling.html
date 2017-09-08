@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Twitter labelling</title>
+</head>
+<body>
+
+<div>
+    {{ data["hits"]["hits"][0]["_source"]["tweet_content"] }}
+</div>
+<br/>
+<br/>
+
+<div>
+    <form action="{{ url_for('label_a_tweet', tweet_id=data["hits"]["hits"][0]["_id"]) }}" method="post">
+        <input name="submit" value="positive" type="submit"/>
+        <input name="submit" value="neutral" type="submit"/>
+        <input name="submit" value="negative" type="submit"/>
+    </form>
+</div>
+</body>
+</html>

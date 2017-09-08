@@ -125,7 +125,7 @@ Or define logstash in your `SYSTEM_PATH` and run the following:
 
 You should see some logs that end up with:
 
-`Successfully started Logstash API endpoint {:port=>9600}`
+`Successfully started Logstash sentiment_service endpoint {:port=>9600}`
 
 ### Setting up Kibana
 

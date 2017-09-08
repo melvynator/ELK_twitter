@@ -139,6 +139,9 @@
         "enabled": false
       },
       "properties": {
+        "sentiment" : {
+          "type": "keyword"
+        },
         "tweet_coordinates": {
           "type": "geo_point"
         },
