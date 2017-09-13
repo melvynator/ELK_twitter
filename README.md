@@ -213,8 +213,9 @@ This gif summarize the different step if you are lost.
 
 ## Tutorial
 
-This tutorial allow you to put in application your knowledge of Logstash in order to create your own pipeline for some random tweets and adding in the pipeline some Machine Learning. First of all if it's not already done create your virtual environnement: 
+This tutorial allow you to put in application your knowledge of Logstash in order to create your own pipeline for some random tweets and adding in the pipeline some Machine Learning. First of all if it's not already done: 
 
+    git clone https://github.com/melvynator/ELK_twitter.git
     cd ELK_twitter
     virtualenv -p python3 venv
     source venv/bin/activate
