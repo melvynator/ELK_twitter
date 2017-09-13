@@ -5,6 +5,26 @@ from sklearn.naive_bayes import MultinomialNB
 
 
 def get_term_vectors(es, document_field):
+    delete_neutral_query = {
+      "query": {
+        "match": {
+          "sentiment": "neutral"
+        }
+      }
+    }
+    es.delete_by_query(index="twitter", doc_type="tweet", body=delete_neutral_query)
+    non_sentiment_tweet = {
+      "query": {
+        "bool": {
+          "must_not":{
+            "exists": {
+              "field": "sentiment"
+            }
+          }
+        }
+      }
+    }
+    es.delete_by_query(index="twitter", doc_type="tweet", body=non_sentiment_tweet)
     query = {
       "_source": ["_id", "_parent", "sentiment"],
       "query": {
@@ -33,7 +53,6 @@ def build_model(es):
     vectorizer = TfidfVectorizer()
     training_tfidf = vectorizer.fit_transform(strings_of_tokens)
     classifier = MultinomialNB().fit(training_tfidf, targets)
-    print(training_tfidf, classifier)
     pickle.dump(classifier, open("../models/classifier.p", 'wb'))
     pickle.dump(vectorizer, open("../models/vectorizer.p", 'wb'))
 

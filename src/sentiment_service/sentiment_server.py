@@ -7,24 +7,6 @@ app = Flask(__name__)
 es = Elasticsearch([{"host": "localhost", "port": 9200}])
 
 
-def build_model():
-    query = {
-      "_source": ["_id", "_parent", "sentiment"],
-      "query": {
-        "exists": {
-          "field": "sentiment"
-        }
-      }
-    }
-    response = es.search(index="twitter", doc_type="tweet", body=query, size=200)
-    tuples_parent_child = [(document["_parent"], document["_id"]) for document in response["hits"]["hits"]]
-    targets = [document["_source"]["sentiment"] for document in response["hits"]["hits"]]
-    documents = [{"_index": "twitter", "_type": "tweet", "_id": tuple_parent_child[1], "_parent": tuple_parent_child[0], "fields": ["tweet_content.nlp"]} for tuple_parent_child in tuples_parent_child]
-    term_vectors_query = {"docs": documents}
-    response = es.mtermvectors(body=term_vectors_query)
-    term_vectors_to_vectors(response, targets)
-
-
 @app.route('/labeling', methods=['GET'])
 def get_random_tweet():
     query = {
@@ -33,6 +15,11 @@ def get_random_tweet():
                 "must_not": {
                     "exists": {
                         "field": "sentiment"
+                    }
+                },
+                "must": {
+                    "match": {
+                        "tweet_lang": "en"
                     }
                 }
             }
@@ -88,7 +75,8 @@ def predict_a_tweet():
     to_predict = [tweet_content]
     tfidf_to_predict = vectorizer.transform(to_predict)
     predicted = classifier.predict(tfidf_to_predict)
-    return predicted[0]
+    print(tweet_content, predicted[0])
+    return jsonify(response=predicted[0])
 
 
 if __name__ == '__main__':
