@@ -10,8 +10,8 @@ es = Elasticsearch([{"host": "localhost", "port": 9200}])
 @app.route('/predict', methods=['POST'])
 def predict_a_tweet():
     # Load the Machine learning model based on labeled data
-    vectorizer = pickle.load(open("models/vectorizer.p", 'rb'))
-    classifier = pickle.load(open("models/classifier.p", 'rb'))
+    vectorizer = pickle.load(open("vectorizer.p", 'rb'))
+    classifier = pickle.load(open("classifier.p", 'rb'))
     # Retrieve the value of the tweet that is send through the POST
     # And put the value in a list
     tweet_content =

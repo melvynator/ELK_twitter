@@ -20,4 +20,11 @@ The goal is to transform those JSON into another format like:
 }
 
 You will have as well to build your "Machine Learning API" to generate the "sentiment"
-field. Complete the file "sentiment_server.py" to do so.
+field. Complete the file "api.py" to do so.
+
+To test your pipeline you can type:
+
+logstash --debug -f config/tutorial-ml.conf
+
+And see if you have the expected result.
+Good luck!
