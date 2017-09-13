@@ -35,6 +35,8 @@ Let's have a look to the different part that are covered by this pipeline:
 
 ### Concerning the Logstash part
 
+___
+
 #### Input
 
 The input used is Twitter, you can use it to track users or keywords or tweets in a specific location.
@@ -56,6 +58,7 @@ Two output are defined:
 * MongoDB: To store your data
 
 ### Concerning the Elasticsearch part
+____
 
 #### Mapping
 
@@ -77,6 +80,7 @@ The 3 analyzers are:
 The mapping is not dynamic, Twitter having a lot of fields that are not (or poorly) documented, it avoid data polution and keep only the wanted data.
 
 ### Concerning the Kibana part
+____
 
 On Kibana side the repository offer:
 
@@ -85,6 +89,7 @@ On Kibana side the repository offer:
 * Different kind of visualizations
 
 ### Machine learning
+____
 
 A small "API" has been created to give you an idea about how you can use Logstash in order to "label" your tweet on the fly before indexation. The model is a dummy model but you can easily introduce your own complex model on the form of an API.
 
@@ -123,16 +128,18 @@ Clone the repository:
 `git clone https://github.com/melvynator/ELK_twitter.git`
 
 ### Setting up Elasticsearch
+____
 
 Make sure that you don't have an index `twitter` already present.
 
 ### Setting up your Machine Learning API
+____
 
 Go into the main repository and create a virtual environement:
 
-`cd ELK_twitter`
-`virtualenv -p python3 venv`
-`source venv/bin/activate`
+    cd ELK_twitter
+    virtualenv -p python3 venv
+    source venv/bin/activate
 
 Then install Flask and Scikit-Learn (For the machine learning)
 
@@ -140,10 +147,11 @@ Then install Flask and Scikit-Learn (For the machine learning)
 
 Then you can launch your local server:
 
-`cd src/sentiment_service/`
-`python sentiment_server.py`
+    cd src/sentiment_service/
+    python sentiment_server.py
 
 ### Setting up Logstash
+___
 
 Once you have downloaded the repository, open the file:
 
@@ -177,6 +185,7 @@ You should see some logs that end up with:
 `Successfully started Logstash sentiment_service endpoint {:port=>9600}`
 
 ### Setting up Kibana
+___
 
 Now go to Kibana: http://localhost:5601/
 
