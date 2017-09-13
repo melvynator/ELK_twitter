@@ -213,7 +213,29 @@ This gif summarize the different step if you are lost.
 
 ## Tutorial
 
+This tutorial allow you to put in application your knowledge of Logstash in order to create your own pipeline for some random tweets and adding in the pipeline some Machine Learning. First of all if it's not already done create your virtual environnement: 
 
+    cd ELK_twitter
+    virtualenv -p python3 venv
+    source venv/bin/activate
+
+In the file `ELK_twitter/tutorial/ml-example/tutorial-ml.conf` please change: `/YOUR/ABSOLUTE/PATH/TO/YOUR/FILE/fake_tweet_sample.txt` by the real absolute path to this file.
+
+Now have a look to the file: `ELK_twitter/tutorial/ml-example/readme.txt`
+
+The first thing you should do is to design your API in the file: `ELK_twitter/tutorial/ml-example/api.py`
+
+To let you focus on the comprehension of Logstash we already have created the Machine learning model and the vectorizer you just have to load them and return the prediction. If you are stuck feel free to have a look to this file: `ELK_twitter/src/sentiment_service/sentiment_service.py` it will give you some hints.
+
+Once your API has been built you should start your server by running the following in your terminal:
+
+`python api.py`
+
+Now you can finally focus on building the filters in the logstash configuration file: `ELK_twitter/tutorial/ml-example/tutorial-ml.conf`
+
+You can try your pipeline by typing in your terminal the following:
+
+`logstash --debug -f tutorial-ml.conf`
 
 ## Ressources
 
