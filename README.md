@@ -6,6 +6,7 @@
 
 #### [+ Introduction](#introduction)
 #### [+ Getting started](#getting-started)
+#### [+ Requirements](#requirements)
 #### [+ Tutorial](#tutorial)
 #### [+ Ressources](#ressources)
 
@@ -15,9 +16,9 @@
 
 ## Introduction
 
-This repository aims to provide a fully working "out-of-the-box" data pipeline for Twitter using the ELK (Elasticsearch, Logstash, and Kibana) stack. 
+This repository aims to provide a fully working "out-of-the-box" data pipeline for doing Machine learning on Twitter data using the ELK (Elasticsearch, Logstash, and Kibana) stack. 
 
-The `presentation-example` folder contains a fully working example that I use in the presentation of this pipeline: ~insert_link here later~, you can use it to play around and familiarize yourself with the ELK stack.
+The `tutorial` folder contains a fully working example that I use in the presentation of this pipeline: ~insert_link here later~, you can use it to play around and familiarize yourself with the ELK stack and it contains as well an excercice to test your comprehension of Logstash.
 
 
 After having installed ELK you should be able in 5 minutes to visualize dashboard like the following:
@@ -36,7 +37,7 @@ Let's have a look to the different part that are covered by this pipeline:
 
 #### Input
 
-The input used is Twitter, you can use it to track user or keyword or tweet in a specific location.
+The input used is Twitter, you can use it to track users or keywords or tweets in a specific location.
 
 #### Filter
 
@@ -79,8 +80,13 @@ The mapping is not dynamic, Twitter having a lot of fields that are not (or poor
 
 On Kibana side the repository offer:
 
-* A dashboard
+* A dashboard for general data visualization
+* A dashboard for comparison between a positive and negative tweet
 * Different kind of visualizations
+
+### Machine learning
+
+A small "API" has been created to give you an idea about how you can use Logstash in order to "label" your tweet on the fly before indexation. The model is a dummy model but you can easily introduce your own complex model on the form of an API.
 
 ## Requirements
 
@@ -120,11 +126,28 @@ Clone the repository:
 
 Make sure that you don't have an index `twitter` already present.
 
+### Setting up your Machine Learning API
+
+Go into the main repository and create a virtual environement:
+
+`cd ELK_twitter`
+`virtualenv -p python3 venv`
+`source venv/bin/activate`
+
+Then install Flask and Scikit-Learn (For the machine learning)
+
+`pip install -r requirements.txt`
+
+Then you can launch your local server:
+
+`cd src/sentiment_service/`
+`python sentiment_server.py`
+
 ### Setting up Logstash
 
 Once you have downloaded the repository, open the file:
 
-`ELK_twitter/twitter-pipeline/config/twitter-pipeline.conf`
+`ELK_twitter/src/twitter-pipeline/config/twitter-pipeline.conf`
 
 Replace the `<YOUR-KEY>` by your corresponding twitter key:
 
@@ -137,9 +160,9 @@ Replace the `<YOUR-KEY>` by your corresponding twitter key:
 
 Now go into `twitter-pipeline`:
 
-`cd ELK_twitter/twitter-pipeline`
+`cd ../src/twitter-pipeline`
 
-Make sure that elasticsearch is started and run on the port `9600`.
+Make sure that elasticsearch is started and run on the port `9200`.
 
 You can run the pipeline using:
 
@@ -171,7 +194,7 @@ Now go to:
 
 And select the file in:
 
-`ELK_twitter/twitter-pipeline/kibana-visualization/kibana_charts.json`
+`ELK_twitter/src/twitter-pipeline/kibana-visualization/kibana_charts.json`
 
 You can now go to *Dashboard*
 
@@ -180,6 +203,7 @@ This gif summarize the different step if you are lost.
 ![alt text](https://github.com/melvynator/ELK_twitter/blob/master/img/kibana_config.gif "Summary")
 
 ## Tutorial
+
 
 
 ## Ressources
