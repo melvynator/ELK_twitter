@@ -24,7 +24,7 @@ field. Complete the file "api.py" to do so.
 
 To test your pipeline you can type:
 
-logstash --debug -f config/tutorial-ml.conf
+logstash --debug -f tutorial-ml.conf
 
 And see if you have the expected result.
 Good luck!
