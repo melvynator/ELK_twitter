@@ -16,7 +16,7 @@
 
 ## Introduction
 
-This repository aims to provide a fully working "out-of-the-box" data pipeline for doing Machine learning on Twitter data using the ELK (Elasticsearch, Logstash, and Kibana) stack. 
+This repository aims to provide a fully working "out-of-the-box" data pipeline for doing Machine learning on Twitter data using the ELK (Elasticsearch, Logstash, and Kibana) stack.
 
 The `tutorial` folder contains a fully working example that I use in the presentation of this pipeline: ~insert_link here later~, you can use it to play around and familiarize yourself with the ELK stack and it contains as well an excercice to test your comprehension of Logstash.
 
@@ -43,7 +43,7 @@ The input used is Twitter, you can use it to track users or keywords or tweets i
 
 #### Filter
 
-A lot of filters are applied and mainly do the following tasks:
+A lot of filters are applied and they are in charge of the following tasks:
 
 * Remove depreciated field
 * Divide the tweet in two or three events (users and tweet)
@@ -165,14 +165,23 @@ Replace the `<YOUR-KEY>` by your corresponding twitter key:
       oauth_token => "<YOUR-KEY>"
       oauth_token_secret => "<YOUR-KEY>"
 
-
 Now go into `twitter-pipeline`:
 
 `cd ../src/twitter-pipeline`
 
-Make sure that elasticsearch is started and run on the port `9200`.
+Make sure that Elasticsearch is started and run on the port `9200`.
 
-You can run the pipeline using:
+In addition, you also have to manually install the following plugins for Logstash:
+
+1. MongoDB for Logstash
+`sudo /usr/share/logstash/bin/logstash-plugin install logstash-filter-rest`
+2. REST for Logstash
+`sudo /usr/share/logstash/bin/logstash-plugin install logstash-output-mongodb`
+
+As default, the pipeline is only configured to output to Elasticsearch, but if you have MongoDB installed, then you can uncomment the mongo output in the config file:
+`ELK_twitter/src/twitter-pipeline/config/twitter-pipeline.conf`
+
+Then, you can run the pipeline using:
 
 `sudo /usr/share/logstash/bin/logstash -f config/twitter-pipeline.conf`
 
@@ -213,7 +222,7 @@ This gif summarize the different step if you are lost.
 
 ## Tutorial
 
-This tutorial allow you to put in application your knowledge of Logstash in order to create your own pipeline for some random tweets and adding in the pipeline some Machine Learning. First of all if it's not already done: 
+This tutorial allow you to put in application your knowledge of Logstash in order to create your own pipeline for some random tweets and adding in the pipeline some Machine Learning. First of all if it's not already done:
 
     git clone https://github.com/melvynator/ELK_twitter.git
     cd ELK_twitter
@@ -244,4 +253,3 @@ Thanks to stackoverflow community and Elastic community for the answer provided.
 
 https://www.elastic.co/guide/en/logstash/current/introduction.html
 https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html
-
