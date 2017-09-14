@@ -137,7 +137,7 @@ Make sure that you don't have an index `twitter` already present.
 ### Setting up your Machine Learning API
 ____
 
-**If you don't have the need to make any API call you can skip this part**
+:warning: **If you don't have the need to make any API call you can skip this part** :warning:
 
 
 Go into the main repository and create a virtual environement:
@@ -178,19 +178,19 @@ Make sure that Elasticsearch is started and run on the port `9200`.
 
 In addition, you also have to manually install the following plugins for Logstash:
 
-**If you don't have the need to make any API call you don't have to install the REST Plugin**
+:warning: **If you don't have the need to make any API call you don't have to install the REST Plugin** :warning:
 
-**If you don't want to use mongoDB you don't have to install the MongoDB Plugin**
+:warning: **If you don't want to use mongoDB you don't have to install the MongoDB Plugin** :warning:
 
 1. [MongoDB](https://github.com/logstash-plugins/logstash-output-mongodb) for Logstash (Allow you to store your data into mongoDB)
 `sudo /usr/share/logstash/bin/logstash-plugin install logstash-filter-rest`
 2. [REST](https://github.com/lucashenning/logstash-filter-rest) for Logstash (Allow you to make API call)
 `sudo /usr/share/logstash/bin/logstash-plugin install logstash-output-mongodb`
 
-**By default, the pipeline is only configured to output to Elasticsearch**, but if you have MongoDB installed, then you can uncomment the mongo output in the config file:
+:warning: **By default, the pipeline is only configured to output to Elasticsearch**, but if you have MongoDB installed, then you can uncomment the mongo output in the config file:
 `ELK_twitter/src/twitter-pipeline/config/twitter-pipeline.conf`
 
-**By default, the pipeline is configured to make API call**, but if you don't have any API you can remove the `rest` filter in the config file:
+:warning: **By default, the pipeline is configured to make API call**, but if you don't have any API you can remove the `rest` filter in the config file:
 `ELK_twitter/src/twitter-pipeline/config/twitter-pipeline.conf`
 
 Then, you can run the pipeline using:
