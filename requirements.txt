@@ -9,7 +9,6 @@ flask_sqlalchemy==2.2
 cffi==1.10.0
 pycparser==2.17
 flask-wtf==0.14.2
-WTForms==2.1
 requests==2.13.0
 elasticsearch~=5.4.0
 numpy==1.11.2
