@@ -1,6 +1,12 @@
 # ELK for Twitter sentiment analysis
 
 
+## Contributing
+
+This repository is fully free and fully open source. The license is Apache 2.0, meaning you are pretty much free to use it however you want in whatever way.
+
+All contributions are welcome: ideas, pull requests, issues, documentation improvement, complaints.
+
 
 ## Summary
 
@@ -177,6 +183,7 @@ Make sure that Elasticsearch is started and run on the port `9200`.
 In addition, you also have to manually install the following plugins for Logstash:
 
 **If you don't have the need to make any API call you don't have to install the REST Plugin**
+
 **If you don't want to use mongoDB you don't have to install the MongoDB Plugin**
 
 1. MongoDB for Logstash (Allow you to store your data into mongoDB)
