@@ -135,6 +135,9 @@ Make sure that you don't have an index `twitter` already present.
 ### Setting up your Machine Learning API
 ____
 
+**If you don't have the need to make any API call you can skip this part**
+
+
 Go into the main repository and create a virtual environement:
 
     cd ELK_twitter
@@ -153,7 +156,7 @@ Then you can launch your local server:
 ### Setting up Logstash
 ___
 
-Once you have downloaded the repository, open the file:
+To start configuring your logstash you have to open the configuration file:
 
 `ELK_twitter/src/twitter-pipeline/config/twitter-pipeline.conf`
 
@@ -173,12 +176,18 @@ Make sure that Elasticsearch is started and run on the port `9200`.
 
 In addition, you also have to manually install the following plugins for Logstash:
 
-1. MongoDB for Logstash
+**If you don't have the need to make any API call you don't have to install the REST Plugin**
+**If you don't want to use mongoDB you don't have to install the MongoDB Plugin**
+
+1. MongoDB for Logstash (Allow you to store your data into mongoDB)
 `sudo /usr/share/logstash/bin/logstash-plugin install logstash-filter-rest`
-2. REST for Logstash
+2. REST for Logstash (Allow you to make API call)
 `sudo /usr/share/logstash/bin/logstash-plugin install logstash-output-mongodb`
 
-As default, the pipeline is only configured to output to Elasticsearch, but if you have MongoDB installed, then you can uncomment the mongo output in the config file:
+**By default, the pipeline is only configured to output to Elasticsearch**, but if you have MongoDB installed, then you can uncomment the mongo output in the config file:
+`ELK_twitter/src/twitter-pipeline/config/twitter-pipeline.conf`
+
+**By default, the pipeline is configured to make API call**, but if you don't have any API you can remove the `rest` filter in the config file:
 `ELK_twitter/src/twitter-pipeline/config/twitter-pipeline.conf`
 
 Then, you can run the pipeline using:
