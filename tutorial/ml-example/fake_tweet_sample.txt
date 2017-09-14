@@ -1,4 +1,0 @@
-{"author_first_name": "John", "author_last_name": "Doe", "time": "10 October 2017", "tweet_content": "WOW this Narcos new season was awesome can't wait for season 4", "hashtags": "#narcos #netflix #amazing"}
-{"author_first_name": "Bill", "author_last_name": "Smith", "time": "24 September 2017", "tweet_content": "Man this GOT last season is really bad...", "hashtags": "#HowToMakeMonney #got #HBO"}
-{"author_first_name": "Tom", "author_last_name": "Taylor", "time": "11 September 2017", "tweet_content": "Game of throne is incredible!!!! Thanks HBO", "hashtags": "#got #season7 #HBO"}
-{"author_first_name": "Max", "author_last_name": "Payne", "time": "30 August 2017", "tweet_content": "Haha last scene of game of throne is so bad my friends", "hashtags": "#dragon #got #HBO"}
