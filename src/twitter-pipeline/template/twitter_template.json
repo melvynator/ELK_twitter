@@ -17,7 +17,7 @@
       "tokenizer": {
         "tweeter_tokenizer": {
           "type": "pattern",
-          "pattern": "(\\w+|\\S*[\\S*])",
+          "pattern": "(http?\\S*\\w+|\\w+|\\S*[\\S*])",
           "group": 1
         }
       }
