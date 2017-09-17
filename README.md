@@ -183,9 +183,10 @@ In addition, you also have to manually install the following plugins for Logstas
 :warning: **If you don't want to use mongoDB you don't have to install the MongoDB Plugin** :warning:
 
 1. [MongoDB](https://github.com/logstash-plugins/logstash-output-mongodb) for Logstash (Allow you to store your data into mongoDB)
-`sudo /usr/share/logstash/bin/logstash-plugin install logstash-filter-rest`
-2. [REST](https://github.com/lucashenning/logstash-filter-rest) for Logstash (Allow you to make API call)
 `sudo /usr/share/logstash/bin/logstash-plugin install logstash-output-mongodb`
+2. [REST](https://github.com/lucashenning/logstash-filter-rest) for Logstash (Allow you to make API call)
+`sudo /usr/share/logstash/bin/logstash-plugin install logstash-filter-rest`
+
 
 :warning: **By default, the pipeline is only configured to output to Elasticsearch**, but if you have MongoDB installed, then you can uncomment the mongo output in the config file:
 `ELK_twitter/src/twitter-pipeline/config/twitter-pipeline.conf`
