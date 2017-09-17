@@ -93,7 +93,11 @@ On Kibana side the repository offer:
 ### Machine learning
 ____
 
-A small "API" has been created to give you an idea about how you can use Logstash in order to "label" your tweet on the fly before indexation. The model is a dummy model but you can easily introduce your own complex model on the form of an API.
+Logstash make it simple to integrate machine learning model directly into your pipeline using the rest filter. A small "API" has been created to give you an idea about how you can use this filter in order to "label" your tweet on the fly before indexation. You can find this toy API here:
+
+https://github.com/melvynator/toy_sentiment_API
+
+The model is a dummy model but you can easily introduce your own complex model on the form of such API.
 
 ## Requirements
 
@@ -139,10 +143,13 @@ ____
 
 :warning: **If you don't have the need to make any API call you can skip this part** :warning:
 
+Clone this repository:
+
+`git clone https://github.com/melvynator/toy_sentiment_API`
 
 Go into the main repository and create a virtual environement:
 
-    cd ELK_twitter
+    cd toy_sentiment_API
     virtualenv -p python3 venv
     source venv/bin/activate
 
@@ -152,7 +159,6 @@ Then install Flask and Scikit-Learn (For the machine learning)
 
 Then you can launch your local server:
 
-    cd src/sentiment_service/
     python sentiment_server.py
 
 ### Setting up Logstash
@@ -191,8 +197,10 @@ In addition, you also have to manually install the following plugins for Logstas
 :warning: **By default, the pipeline is only configured to output to Elasticsearch**, but if you have MongoDB installed, then you can uncomment the mongo output in the config file:
 `ELK_twitter/src/twitter-pipeline/config/twitter-pipeline.conf`
 
-:warning: **By default, the pipeline is configured to make API call**, but if you don't have any API you can remove the `rest` filter in the config file:
+:warning: **By default, the pipeline is not configured to make API call**, if you have an API you can uncomment the `rest` filter in the config file:
 `ELK_twitter/src/twitter-pipeline/config/twitter-pipeline.conf`
+
+Don't forget to specify your own endpoint and data.
 
 Then, you can run the pipeline using:
 
