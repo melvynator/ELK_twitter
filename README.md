@@ -93,7 +93,7 @@ On Kibana side the repository offer:
 ### Machine learning
 ____
 
-Logstash make it simple to integrate machine learning model directly into your pipeline using the rest filter. A small "API" has been created to give you an idea about how you can use this filter in order to "label" your tweet on the fly before indexation. You can find this toy API here:
+Logstash make it simple to integrate machine learning model directly into your pipeline using the rest filter. A small "API" has been created to give you an idea about how you can use the rest filter in order to "label" your tweet on the fly before indexation. You can find this toy API here:
 
 https://github.com/melvynator/toy_sentiment_API
 
@@ -143,7 +143,9 @@ ____
 
 :warning: **If you don't have the need to make any API call you can skip this part** :warning:
 
-Clone this repository:
+:warning: **If you have your own API you can skip this part** :warning:
+
+Download the toy API:
 
 `git clone https://github.com/melvynator/toy_sentiment_API`
 
