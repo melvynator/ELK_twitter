@@ -21,7 +21,9 @@ All contributions are welcome: ideas, pull requests, issues, documentation impro
 
 ## Introduction
 
-This repository aims to provide a fully working "out-of-the-box" data pipeline for doing Machine learning on Twitter data using the ELK (Elasticsearch, Logstash, and Kibana) stack. If you are not familiar with Logstash you may want to follow this [tutorial](https://github.com/melvynator/Logstash_tutorial/blob/master/README.md) first.
+This repository aims to provide a fully working "out-of-the-box" data pipeline for doing Machine learning on Twitter data using the ELK (Elasticsearch, Logstash, and Kibana) stack. 
+
+If you are not familiar with Logstash you may want to follow this [tutorial](https://github.com/melvynator/Logstash_tutorial/blob/master/README.md) first.
 
 After having installed ELK you should be able in 5 minutes to visualize dashboard like the following:
 
@@ -32,6 +34,8 @@ After having installed ELK you should be able in 5 minutes to visualize dashboar
 The offered pipeline can be modelized by the following flow chart:
 
 ![alt text](https://github.com/melvynator/ELK_twitter/blob/master/img/pipeline.png "Pipeline")
+
+Here are some slides that present the logstash part of the pipeline: https://www.slideshare.net/hypto/machine-learning-in-a-twitter-etl-using-elk .
 
 Let's have a look to the different part that are covered by this pipeline:
 
