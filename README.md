@@ -1,4 +1,4 @@
-# ELK for Twitter sentiment analysis
+# Out of the box Twitter pipeline using the Elastic stack (ELK)
 
 
 ## Contributing
